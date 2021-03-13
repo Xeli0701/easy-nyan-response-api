@@ -3,6 +3,7 @@
 from fastapi import FastAPI
 from janome.tokenizer import Tokenizer
 import oseti
+import urllib.parse
 
 app = FastAPI()
 
@@ -21,8 +22,9 @@ async def getNyanMessage(message):
     return {"message": converted_message}
 
 
-@app.get("/posneg/{message}")
-async def getPosNegResponse(message):
+@app.get("/posneg/{message2}")
+async def getPosNegResponse(message2):
+    message = urllib.parse.unquote(message2)
     analyzer = oseti.Analyzer()
     temp = analyzer.analyze(message)
     score = sum(temp) / len(temp)
