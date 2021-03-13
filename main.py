@@ -17,6 +17,7 @@ async def getNyanMessage(message):
             message_tokens.append(token.surface)
 
     converted_message = "".join(message_tokens) + "にゃ"
+    print(converted_message)
     return {"message": converted_message}
 
 
