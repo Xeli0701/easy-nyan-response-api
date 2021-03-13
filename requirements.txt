@@ -1,5 +1,6 @@
 fastapi==0.58.1
 uvicorn==0.11.5
+gunicorn==20.0.4
 Janome==0.4.1
 oseti==0.2
 mecab-python3
