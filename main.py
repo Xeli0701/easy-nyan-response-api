@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.get("/nyan/{message}")
 async def getNyanMessage(message):
-    #「な」を「にゃ」に変換する
+    #「な」を「にゃ」に変換する・語尾をいい感じに「にゃ」にする
     t = Tokenizer()
     message_tokens = []
     for token in t.tokenize(message):
@@ -16,13 +16,16 @@ async def getNyanMessage(message):
         else:
             message_tokens.append(token.surface)
 
-    converted_message = "".join(message_tokens) + "にゃ"
+    temp = "".join(message_tokens) + "にゃ"
+    converted_message = temp.replace("な","にゃ")
+     
     print(converted_message)
     return {"message": converted_message}
 
 
 @app.get("/posneg/{message}")
 async def getPosNegResponse(message):
+    #感情分析して、その結果を元に相槌を返す
     message = urllib.parse.unquote(message)
     analyzer = oseti.Analyzer()
     temp = analyzer.analyze(message)
