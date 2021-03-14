@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from janome.tokenizer import Tokenizer
+#from janome.tokenizer import Tokenizer
 #import oseti
 import urllib.parse
 
