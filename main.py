@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from janome.tokenizer import Tokenizer
+# from janome.tokenizer import Tokenizer
 # import oseti
 # import urllib.parse
 
@@ -7,7 +7,6 @@ app = FastAPI()
 
 @app.get("/nyan/{message}")
 async def getNyanMessage(message):
-    #「な」を「にゃ」に変換する・語尾をいい感じに「にゃ」にする
     # t = Tokenizer()
     # message_tokens = []
     # for token in t.tokenize(message):
@@ -26,7 +25,6 @@ async def getNyanMessage(message):
 
 # @app.get("/posneg/{message2}")
 # async def getPosNegResponse(message2):
-#     #感情分析して、その結果を元に相槌を返す
 #     message = urllib.parse.unquote(message2)
 #     analyzer = oseti.Analyzer()
 #     temp = analyzer.analyze(message)
