@@ -8,6 +8,7 @@ app = FastAPI()
 @app.get("/nyan/{message}")
 async def getNyanMessage(message):
     #「な」を「にゃ」に変換する・語尾をいい感じに「にゃ」にする
+    # Janomeのメモリオーバーが解決できればJanome使うけど……うーん
     message = urllib.parse.unquote(message)
     # t = Tokenizer()
     # message_tokens = []
