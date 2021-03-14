@@ -9,17 +9,17 @@ app = FastAPI()
 async def getNyanMessage(message):
     #「な」を「にゃ」に変換する・語尾をいい感じに「にゃ」にする
     message = urllib.parse.unquote(message)
-    t = Tokenizer()
-    message_tokens = []
-    for token in t.tokenize(message):
-        if("終助詞" in token.part_of_speech):
-            pass
-        else:
-            message_tokens.append(token.surface)
+    # t = Tokenizer()
+    # message_tokens = []
+    # for token in t.tokenize(message):
+    #     if("終助詞" in token.part_of_speech):
+    #         pass
+    #     else:
+    #         message_tokens.append(token.surface)
 
-    temp = "".join(message_tokens) + "にゃ"
-    converted_message = temp.replace("な","にゃ")
-     
+    # temp = "".join(message_tokens) + "にゃ"
+    converted_message = message.replace("な","にゃ")
+    
     print(converted_message)
     return {"message": converted_message}
 
