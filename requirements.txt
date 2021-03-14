@@ -3,6 +3,5 @@ uvicorn==0.11.5
 gunicorn==20.0.4
 Janome==0.4.1
 mecab-python3==0.996.5
-ipadic==
 sengiri==0.2.1
 oseti==0.2

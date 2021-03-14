@@ -19,7 +19,6 @@ async def getNyanMessage(message):
     converted_message = temp.replace("な","にゃ")
      
     print(converted_message)
-    converted_message = "a"
     return {"message": converted_message}
 
 
