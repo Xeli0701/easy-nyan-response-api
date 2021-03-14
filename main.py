@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-# from janome.tokenizer import Tokenizer
+from janome.tokenizer import Tokenizer
 # import oseti
 # import urllib.parse
 
@@ -7,18 +7,18 @@ app = FastAPI()
 
 @app.get("/nyan/{message}")
 async def getNyanMessage(message):
-    # t = Tokenizer()
-    # message_tokens = []
-    # for token in t.tokenize(message):
-    #     if("終助詞" in token.part_of_speech):
-    #         pass
-    #     else:
-    #         message_tokens.append(token.surface)
+    t = Tokenizer()
+    message_tokens = []
+    for token in t.tokenize(message):
+        if("終助詞" in token.part_of_speech):
+            pass
+        else:
+            message_tokens.append(token.surface)
 
-    # temp = "".join(message_tokens) + "にゃ"
-    # converted_message = temp.replace("な","にゃ")
+    temp = "".join(message_tokens) + "にゃ"
+    converted_message = temp.replace("な","にゃ")
      
-    # print(converted_message)
+    print(converted_message)
     converted_message = "a"
     return {"message": converted_message}
 
